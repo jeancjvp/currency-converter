@@ -1,0 +1,22 @@
+input,
+select,
+.output {
+    border-width: calc(var(--border-width) * 0.5px);
+    border-style: solid;
+    border-color: var(--accent);
+    border-radius: calc(var(--border-radius) * 1px);
+    text-align: center;
+	width: -webkit-fill-available;
+}
+
+.output {
+	height: 2.8rem;
+}
+
+.subtitle {
+	text-align: start;
+}
+
+.country {
+	color: gold;
+}
