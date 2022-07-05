@@ -10,8 +10,8 @@ import OptionsInput from './optionsInput';
 
 function CurrencyForm({ handleSubmit, result = '' }) {
 
-	const [currencyFrom, setCurrencyFrom] = useState();
-	const [currencyTo, setCurrencyTo] = useState();
+	const [currencyFrom, setCurrencyFrom] = useState('USD');
+	const [currencyTo, setCurrencyTo] = useState('EUR');
 
 	// Setting Country names onChange
 	function onChangeOption(name) {
@@ -29,7 +29,7 @@ function CurrencyForm({ handleSubmit, result = '' }) {
 							<Input type={'number'} name={'amountFrom'} placeholder={'Amount'}/>
 						</div>
 						<div className='col p-0'>
-							<OptionsInput name={'currencyFrom'} options={ Object.keys(currencies) } onChangeOption={ onChangeOption }/>
+							<OptionsInput name={'currencyFrom'} options={ Object.keys(currencies).sort() } onChangeOption={ onChangeOption } defaultValue={ currencies[currencyFrom]['id'] }/>
 						</div>
 					</div>
 				</div>
@@ -38,10 +38,10 @@ function CurrencyForm({ handleSubmit, result = '' }) {
 					<h6 className='subtitle text-white'>To: <span className='country'>{ currencyTo ? currencies[currencyTo]['currencyName'] : null }</span></h6>
 					<div className='justify-content-center row'>
 						<div className='col-8 p-0'>
-							<div className='output p-2 bg-white'>{ !result ? 'Calculating...' : result }</div>
+							<div className='output p-2 bg-white'>{ !result ? '-' : result }</div>
 						</div>
 						<div className='col p-0'>
-							<OptionsInput name={'currencyTo'} options={ Object.keys(currencies) } onChangeOption={ onChangeOption }/>
+							<OptionsInput name={'currencyTo'} options={ Object.keys(currencies).sort() } onChangeOption={ onChangeOption } defaultValue={ currencies[currencyTo]['id'] }/>
 						</div>
 					</div>
 				</div>
