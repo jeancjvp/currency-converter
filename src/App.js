@@ -8,7 +8,7 @@ import HomePage from './pages/home';
 function App() {
   return (
     <div className="App">
-    	<div className='container px-3'>
+    	<div className='container px-3 main-container'>
 			<Routes>
 				<Route path='/' element={ <HomePage /> } />
 			</Routes>

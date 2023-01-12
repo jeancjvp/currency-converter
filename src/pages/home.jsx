@@ -53,7 +53,7 @@ function HomePage() {
 	}
 
 	return (
-		<div className='vh-100 d-flex text-center'>
+		<div className='d-flex text-center main-converter'>
 			<div className='m-auto'>
 				<h1 className='mb-5 text-white'>Currency Converter</h1>
 				<CurrencyForm handleSubmit={ handleSubmit } result={ result }/>
